@@ -13,7 +13,8 @@ function App() {
       <ProjectProvider>
         <BrowserRouter basename="/ProjectSync"> {/* ✅ Important for GitHub Pages */}
           <Routes>
-            <Route path="/" element={<LoginPage />} />
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/projects" element={<ProjectListPage />} />
             <Route path="/submit-project" element={<ProjectSubmissionPage />} />
           </Routes>
