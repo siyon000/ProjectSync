@@ -16,7 +16,8 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/projects" element={<ProjectListPage />} />
             <Route path="/submit-project" element={<ProjectSubmissionPage />} />
-            <Route path="/" element={<Navigate to="/login" />} />
+            {/* Fix: Ensure redirection works properly */}
+            <Route path="/" element={<Navigate to="/login" replace />} />
           </Routes>
         </Router>
       </ProjectProvider>
