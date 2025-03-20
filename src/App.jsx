@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import ProjectListPage from './pages/ProjectListPage';
 import ProjectSubmissionPage from './pages/ProjectSubmissionPage';
@@ -11,14 +11,14 @@ function App() {
   return (
     <AuthProvider>
       <ProjectProvider>
-        <BrowserRouter basename="/ProjectSync"> {/* ✅ Important for GitHub Pages */}
+        <Router> {/* ✅ Use HashRouter for GitHub Pages */}
           <Routes>
             <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/projects" element={<ProjectListPage />} />
             <Route path="/submit-project" element={<ProjectSubmissionPage />} />
           </Routes>
-        </BrowserRouter>
+        </Router>
       </ProjectProvider>
     </AuthProvider>
   );
