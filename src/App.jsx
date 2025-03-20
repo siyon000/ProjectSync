@@ -11,11 +11,14 @@ function App() {
   return (
     <AuthProvider>
       <ProjectProvider>
-        <BrowserRouter basename="/ProjectSync"> {/* ✅ Important for GitHub Pages */}
+        <BrowserRouter basename="/ProjectSync">
           <Routes>
-            <Route path="/" element={<LoginPage />} />
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/projects" element={<ProjectListPage />} />
-            <Route path="/submit-project" element={<ProjectSubmissionPage />} />
+            <Route path="/submit" element={<ProjectSubmissionPage />} />
+            {/* Add a catch-all route */}
+            <Route path="*" element={<Navigate to="/login" />} />
           </Routes>
         </BrowserRouter>
       </ProjectProvider>
