@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import ProjectListPage from './pages/ProjectListPage';
 import ProjectSubmissionPage from './pages/ProjectSubmissionPage';
@@ -11,16 +11,15 @@ function App() {
   return (
     <AuthProvider>
       <ProjectProvider>
-        <BrowserRouter basename="/ProjectSync">
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/projects" element={<ProjectListPage />} />
             <Route path="/submit" element={<ProjectSubmissionPage />} />
-            {/* Add a catch-all route */}
             <Route path="*" element={<Navigate to="/login" />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </ProjectProvider>
     </AuthProvider>
   );
