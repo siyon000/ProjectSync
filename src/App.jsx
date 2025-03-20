@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import ProjectListPage from './pages/ProjectListPage';
 import ProjectSubmissionPage from './pages/ProjectSubmissionPage';
@@ -11,7 +11,7 @@ function App() {
   return (
     <AuthProvider>
       <ProjectProvider>
-        <Router basename="/ProjectSync">
+        <Router>
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/projects" element={<ProjectListPage />} />
