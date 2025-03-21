@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { LogIn, AlertCircle, User, Lock } from 'lucide-react';
+import { LogIn, AlertCircle, User, Lock, Eye, EyeOff } from 'lucide-react';
 
 const LoginForm = () => {
     const [credentials, setCredentials] = useState({ username: '', password: '' });
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
     const { login } = useAuth();
     const navigate = useNavigate();
 
@@ -28,6 +29,10 @@ const LoginForm = () => {
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(prev => !prev);
     };
 
     return (
@@ -67,15 +72,26 @@ const LoginForm = () => {
                             <Lock className="h-5 w-5 text-gray-400" />
                         </div>
                         <input
-                            type="password"
+                            type={showPassword ? "text" : "password"}
                             id="password"
                             name="password"
-                            className="w-full pl-10 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200"
+                            className="w-full pl-10 pr-10 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200"
                             value={credentials.password}
                             onChange={handleChange}
                             placeholder="Enter your password"
                             required
                         />
+                        <button
+                            type="button"
+                            className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 transition-colors"
+                            onClick={togglePasswordVisibility}
+                            tabIndex="-1"
+                        >
+                            {showPassword ?
+                                <EyeOff className="h-5 w-5" /> :
+                                <Eye className="h-5 w-5" />
+                            }
+                        </button>
                     </div>
                 </div>
 

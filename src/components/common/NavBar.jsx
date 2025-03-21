@@ -21,13 +21,10 @@ const NavBar = () => {
         <nav className="bg-gradient-to-r from-blue-700 to-blue-600 shadow-lg sticky top-0 z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
-                    <div className="flex items-center">
-                        <Link to="/projects" className="flex items-center text-white text-xl font-bold group">
-                            <FileText className="mr-2 h-6 w-6 group-hover:scale-110 transition-transform duration-200" />
-                            <span className="group-hover:text-blue-200 transition-colors duration-200">ProjectSync</span>
-                        </Link>
+                    <div className="flex items-center  text-white text-xl font-bold group">
+                        <FileText className="mr-2 h-6 w-6 group-hover:scale-110 transition-transform duration-200" />
+                        <span className="group-hover:text-blue-200 transition-colors duration-200">ProjectSync</span>
                     </div>
-
                     {/* Desktop menu */}
                     <div className="hidden md:flex md:items-center md:space-x-4">
                         {user && (
