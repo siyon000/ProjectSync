@@ -12,7 +12,7 @@ function App() {
   return (
     <AuthProvider>
       <ProjectProvider>
-        <Router>
+        <Router basename="/ProjectSync">
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/projects" element={<ProjectListPage />} />
