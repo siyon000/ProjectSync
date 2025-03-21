@@ -39,7 +39,6 @@ function ProjectReportForm() {
     const batchOptions = ['2023-A', '2023-B', '2024-A', '2024-B', '2025-A'];
     const mediumOptions = ["English", "Nepali"];
 
-
     const handleChange = (e) => {
         const { name, value } = e.target;
 
@@ -592,7 +591,7 @@ function ProjectReportForm() {
                             onClick={handleNext}
                             className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
                         >
-                            Next Step
+                            Next
                         </button>
                     ) : (
                         <button
@@ -608,7 +607,7 @@ function ProjectReportForm() {
                             ) : (
                                 <>
                                     <Save className="w-4 h-4 mr-2" />
-                                    Submit Project
+                                    Submit
                                 </>
                             )}
                         </button>
