@@ -356,16 +356,6 @@ function ProjectReportForm() {
 
             <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md overflow-hidden max-w-6xl mx-auto">
                 <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50">
-                    <div className="flex items-center justify-between mb-4">
-                        <button
-                            type="button"
-                            onClick={() => window.location.href = '/projects'}
-                            className="text-gray-600 hover:text-gray-800 flex items-center text-sm font-medium focus:outline-none"
-                        >
-                            <ArrowLeft className="w-4 h-4 mr-1" />
-                            Back to Projects
-                        </button>
-                    </div>
                     <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">Project Report Form</h2>
                     <p className="text-center text-gray-600 mb-4">Submit your project details and documentation</p>
 
